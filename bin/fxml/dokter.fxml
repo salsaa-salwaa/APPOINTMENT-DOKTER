@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.2" 
+            xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="controller.DokterController">
+    
+    <!-- Filter Section (HBox with ComboBox and Label) -->
+    <HBox spacing="10" layoutX="10" layoutY="10">
+        <Label text="Filter" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+        <ComboBox fx:id="spesialisFilter" prefWidth="150" promptText="Pilih Spesialis"/>
+    </HBox>
+
+    <!-- Daftar Dokter Section -->
+    <VBox alignment="CENTER" spacing="10" layoutX="10" layoutY="50">
+        <Label text="Daftar Dokter" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+        <TableView fx:id="dokterTable" prefWidth="450" prefHeight="300">
+            <columns>
+                <TableColumn fx:id="namaColumn" text="Nama Dokter" prefWidth="150"/>
+                <TableColumn fx:id="spesialisColumn" text="Spesialis" prefWidth="150"/>
+                <TableColumn fx:id="jadwalColumn" text="Jadwal" prefWidth="150"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+</AnchorPane>

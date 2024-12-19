@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AppointmentController" spacing="20" alignment="CENTER" prefWidth="800" prefHeight="600">
+    <!-- Judul Form -->
+    <Label text="Kelola Appointment" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2C3E50;" />
+
+    <!-- Form Input -->
+    <GridPane hgap="15" vgap="15" alignment="CENTER" style="-fx-background-color: #f5f5f5; -fx-padding: 20px; -fx-border-radius: 10px; -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.2), 10, 0, 2, 2);">
+        <Label text="Dokter:" />
+        <ComboBox fx:id="dokterComboBox" GridPane.columnIndex="1" promptText="Pilih Dokter" prefWidth="250" />
+
+        <Label text="Pasien:" GridPane.rowIndex="1" />
+        <ComboBox fx:id="pasienComboBox" GridPane.columnIndex="1" GridPane.rowIndex="1" promptText="Pilih Pasien" prefWidth="250" />
+
+        <Label text="Tanggal:" GridPane.rowIndex="2" />
+        <DatePicker fx:id="tanggalPicker" GridPane.columnIndex="1" GridPane.rowIndex="2" promptText="Pilih Tanggal" prefWidth="250" />
+
+        <Label text="Status:" GridPane.rowIndex="3" />
+        <ComboBox fx:id="statusComboBox" GridPane.columnIndex="1" GridPane.rowIndex="3" promptText="Pilih Status" prefWidth="250" />
+    </GridPane>
+
+    <!-- Tombol untuk Menambah, Mengubah, dan Menghapus Appointment -->
+    <HBox spacing="15" alignment="CENTER">
+        <Button text="Tambah" onAction="#tambahAppointment" styleClass="button-primary"/>
+        <Button text="Perbarui" onAction="#updateAppointment" styleClass="button-primary"/>
+        <Button text="Hapus" onAction="#hapusAppointment" styleClass="button-danger"/>
+    </HBox>
+
+    <!-- Tabel Appointment -->
+    <TableView fx:id="appointmentTable" prefHeight="300" prefWidth="750" style="-fx-border-color: #BDC3C7; -fx-border-width: 1px; -fx-border-radius: 10px;">
+        <columns>
+            <TableColumn text="ID" fx:id="idColumn" prefWidth="100" />
+            <TableColumn text="Dokter" fx:id="dokterColumn" prefWidth="200" />
+            <TableColumn text="Pasien" fx:id="pasienColumn" prefWidth="200" />
+            <TableColumn text="Tanggal" fx:id="tanggalColumn" prefWidth="150" />
+            <TableColumn text="Status" fx:id="statusColumn" prefWidth="100" />
+        </columns>
+    </TableView>
+</VBox>
